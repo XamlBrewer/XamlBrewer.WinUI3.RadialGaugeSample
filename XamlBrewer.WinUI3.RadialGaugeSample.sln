@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "XamlBrewer.WinUI3.RadialGaugeSample (Package)", "XamlBrewer.WinUI3.RadialGaugeSample\XamlBrewer.WinUI3.RadialGaugeSample (Package)\XamlBrewer.WinUI3.RadialGaugeSample (Package).wapproj", "{D3F94AAB-F260-47A4-BF1B-1B8EAE42DAD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamlBrewer.WinUI3.RadialGaugeSample", "XamlBrewer.WinUI3.RadialGaugeSample\XamlBrewer.WinUI3.RadialGaugeSample\XamlBrewer.WinUI3.RadialGaugeSample.csproj", "{10835780-A195-466E-A2E3-3E60C466DE39}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|arm64 = Debug|arm64
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|arm64 = Release|arm64
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D3F94AAB-F260-47A4-BF1B-1B8EAE42DAD1}.Debug|arm64.ActiveCfg = Debug|arm64
+		{D3F94AAB-F260-47A4-BF1B-1B8EAE42DAD1}.Debug|arm64.Build.0 = Debug|arm64
+		{D3F94AAB-F260-47A4-BF1B-1B8EAE42DAD1}.Debug|arm64.Deploy.0 = Debug|arm64
+		{D3F94AAB-F260-47A4-BF1B-1B8EAE42DAD1}.Debug|x64.ActiveCfg = Debug|x64
+		{D3F94AAB-F260-47A4-BF1B-1B8EAE42DAD1}.Debug|x64.Build.0 = Debug|x64
+		{D3F94AAB-F260-47A4-BF1B-1B8EAE42DAD1}.Debug|x64.Deploy.0 = Debug|x64
+		{D3F94AAB-F260-47A4-BF1B-1B8EAE42DAD1}.Debug|x86.ActiveCfg = Debug|x86
+		{D3F94AAB-F260-47A4-BF1B-1B8EAE42DAD1}.Debug|x86.Build.0 = Debug|x86
+		{D3F94AAB-F260-47A4-BF1B-1B8EAE42DAD1}.Debug|x86.Deploy.0 = Debug|x86
+		{D3F94AAB-F260-47A4-BF1B-1B8EAE42DAD1}.Release|arm64.ActiveCfg = Release|arm64
+		{D3F94AAB-F260-47A4-BF1B-1B8EAE42DAD1}.Release|arm64.Build.0 = Release|arm64
+		{D3F94AAB-F260-47A4-BF1B-1B8EAE42DAD1}.Release|arm64.Deploy.0 = Release|arm64
+		{D3F94AAB-F260-47A4-BF1B-1B8EAE42DAD1}.Release|x64.ActiveCfg = Release|x64
+		{D3F94AAB-F260-47A4-BF1B-1B8EAE42DAD1}.Release|x64.Build.0 = Release|x64
+		{D3F94AAB-F260-47A4-BF1B-1B8EAE42DAD1}.Release|x64.Deploy.0 = Release|x64
+		{D3F94AAB-F260-47A4-BF1B-1B8EAE42DAD1}.Release|x86.ActiveCfg = Release|x86
+		{D3F94AAB-F260-47A4-BF1B-1B8EAE42DAD1}.Release|x86.Build.0 = Release|x86
+		{D3F94AAB-F260-47A4-BF1B-1B8EAE42DAD1}.Release|x86.Deploy.0 = Release|x86
+		{10835780-A195-466E-A2E3-3E60C466DE39}.Debug|arm64.ActiveCfg = Debug|arm64
+		{10835780-A195-466E-A2E3-3E60C466DE39}.Debug|arm64.Build.0 = Debug|arm64
+		{10835780-A195-466E-A2E3-3E60C466DE39}.Debug|x64.ActiveCfg = Debug|x64
+		{10835780-A195-466E-A2E3-3E60C466DE39}.Debug|x64.Build.0 = Debug|x64
+		{10835780-A195-466E-A2E3-3E60C466DE39}.Debug|x86.ActiveCfg = Debug|x86
+		{10835780-A195-466E-A2E3-3E60C466DE39}.Debug|x86.Build.0 = Debug|x86
+		{10835780-A195-466E-A2E3-3E60C466DE39}.Release|arm64.ActiveCfg = Release|arm64
+		{10835780-A195-466E-A2E3-3E60C466DE39}.Release|arm64.Build.0 = Release|arm64
+		{10835780-A195-466E-A2E3-3E60C466DE39}.Release|x64.ActiveCfg = Release|x64
+		{10835780-A195-466E-A2E3-3E60C466DE39}.Release|x64.Build.0 = Release|x64
+		{10835780-A195-466E-A2E3-3E60C466DE39}.Release|x86.ActiveCfg = Release|x86
+		{10835780-A195-466E-A2E3-3E60C466DE39}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {742408C2-2010-4255-95DF-730D43DB2E5B}
+	EndGlobalSection
+EndGlobal

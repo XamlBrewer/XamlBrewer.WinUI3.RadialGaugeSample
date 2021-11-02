@@ -1,0 +1,32 @@
+﻿<Application x:Class="XamlBrewer.WinUI3.RadialGaugeSample.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="using:XamlBrewer.WinUI3.RadialGaugeSample"
+             RequestedTheme="Dark">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Dark">
+                    <x:Double x:Key="BackgroundOpacity">.075</x:Double>
+                    <SolidColorBrush x:Key="TenPercentContrastBrush"
+                                     Color="White"
+                                     Opacity=".1" />
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="Light">
+                    <x:Double x:Key="BackgroundOpacity">.15</x:Double>
+                    <SolidColorBrush x:Key="TenPercentContrastBrush"
+                                     Color="Black"
+                                     Opacity=".1" />
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+            <ResourceDictionary.MergedDictionaries>
+                <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+                <ResourceDictionary Source="\Controls\RadialGauge.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <Color x:Key="SystemAccentColor">CadetBlue</Color>
+            <SolidColorBrush x:Key="SystemAccentColorBrush"
+                             Color="{StaticResource SystemAccentColor}"
+                             Opacity=".33" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

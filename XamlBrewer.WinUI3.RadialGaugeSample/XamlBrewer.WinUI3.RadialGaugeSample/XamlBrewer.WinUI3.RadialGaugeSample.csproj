@@ -1,0 +1,60 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <RootNamespace>XamlBrewer.WinUI3.RadialGaugeSample</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <Platforms>x86;x64;arm64</Platforms>
+    <RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
+    <UseWinUI>true</UseWinUI>
+    <EnableDefaultPageItems>false</EnableDefaultPageItems>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Remove="Assets\About.png" />
+    <Content Remove="Assets\background.jpg" />
+    <Content Remove="Assets\Home.png" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Remove="Controls\RadialGauge.xaml" />
+    <None Remove="Shell.xaml" />
+    <None Remove="Views\AboutPage.xaml" />
+    <None Remove="Views\HomePage.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.1" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.0-experimental1" />
+    <PackageReference Include="Microsoft.WindowsAppSDK.Foundation" Version="1.0.0-experimental1" />
+    <PackageReference Include="Microsoft.WindowsAppSDK.WinUI" Version="1.0.0-experimental1" />
+    <PackageReference Include="Microsoft.WindowsAppSDK.InteractiveExperiences" Version="1.0.0-experimental1" />
+    <Manifest Include="$(ApplicationManifest)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="Controls\RadialGauge.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shell.xaml" />
+    <Page Include="Views\AboutPage.xaml" />
+    <Page Include="Views\HomePage.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Shell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="Views\AboutPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="Views\HomePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+</Project>

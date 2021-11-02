@@ -14,6 +14,7 @@
     <Content Remove="Assets\About.png" />
     <Content Remove="Assets\background.jpg" />
     <Content Remove="Assets\Home.png" />
+    <Content Remove="Assets\TemperatureGauge.png" />
   </ItemGroup>
   
   <ItemGroup>

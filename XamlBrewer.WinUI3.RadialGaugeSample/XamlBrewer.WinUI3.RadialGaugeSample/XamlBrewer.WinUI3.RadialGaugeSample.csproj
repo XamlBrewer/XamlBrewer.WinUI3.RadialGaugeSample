@@ -38,7 +38,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Page Include="Controls\RadialGauge.xaml">
+    <Page Include="Controls\RadialGauge\RadialGauge.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Shell.xaml" />

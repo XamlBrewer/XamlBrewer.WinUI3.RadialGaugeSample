@@ -22,6 +22,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
                 <ResourceDictionary Source="\Controls\RadialGauge\RadialGauge.xaml" />
+                <ResourceDictionary Source="\Controls\RadialGauge2\RadialGauge2.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <Color x:Key="SystemAccentColor">CadetBlue</Color>
             <SolidColorBrush x:Key="SystemAccentColorBrush"

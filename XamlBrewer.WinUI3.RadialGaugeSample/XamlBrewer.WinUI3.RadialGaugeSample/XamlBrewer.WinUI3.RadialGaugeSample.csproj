@@ -19,6 +19,7 @@
   
   <ItemGroup>
     <None Remove="Controls\RadialGauge.xaml" />
+    <None Remove="Controls\RadialGauge2\RadialGauge2.xaml" />
     <None Remove="Shell.xaml" />
     <None Remove="Views\AboutPage.xaml" />
     <None Remove="Views\HomePage.xaml" />
@@ -38,6 +39,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Include="Controls\RadialGauge2\RadialGauge2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\RadialGauge\RadialGauge.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>

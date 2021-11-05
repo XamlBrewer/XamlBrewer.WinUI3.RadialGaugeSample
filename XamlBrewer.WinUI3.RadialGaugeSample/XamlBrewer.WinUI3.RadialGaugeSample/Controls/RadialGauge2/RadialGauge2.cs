@@ -639,7 +639,10 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
             if (radialGauge.TickSpacing > 0)
             {
                 // Ticks.
-                ShapeVisual tick;
+                var tick = radialGauge._compositor.CreateShapeVisual();
+                tick.Size = new Vector2((float)radialGauge.Height, (float)radialGauge.Width);
+                tick.BorderMode = CompositionBorderMode.Soft;
+                tick.Opacity = (float)radialGauge.TickBrush.Opacity;
                 for (double i = radialGauge.Minimum; i <= radialGauge.Maximum; i += radialGauge.TickSpacing)
                 {
                     var roundedTickRectangle = radialGauge._compositor.CreateRoundedRectangleGeometry();
@@ -648,18 +651,14 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
 
                     var tickSpriteShape = radialGauge._compositor.CreateSpriteShape(roundedTickRectangle);
                     tickSpriteShape.FillBrush = radialGauge._compositor.CreateColorBrush(radialGauge.TickBrush.Color);
-                    tickSpriteShape.CenterPoint = new Vector2((float)radialGauge.NeedleWidth / 2, (float)radialGauge.NeedleLength);
+                    tickSpriteShape.Offset = new Vector2(100 - ((float)radialGauge.TickWidth / 2), 0.0f);
+                    tickSpriteShape.CenterPoint = new Vector2((float)radialGauge.TickWidth / 2, 100.0f);
+                    tickSpriteShape.RotationAngleInDegrees = (float)radialGauge.ValueToAngle(i);
 
-                    tick = radialGauge._compositor.CreateShapeVisual();
                     tick.Shapes.Add(tickSpriteShape);
-
-                    tick.Size = roundedTickRectangle.Size;
-                    tick.Offset = new Vector3(100 - ((float)radialGauge.TickWidth / 2), 0.0f, 0);
-                    tick.CenterPoint = new Vector3((float)radialGauge.TickWidth / 2, 100.0f, 0);
-                    tick.RotationAngleInDegrees = (float)radialGauge.ValueToAngle(i);
-                    tick.BorderMode = CompositionBorderMode.Soft;
-                    radialGauge._root.Children.InsertAtTop(tick);
                 }
+
+                radialGauge._root.Children.InsertAtTop(tick);
 
                 // Scale Ticks.
                 SpriteVisual scaleTick;

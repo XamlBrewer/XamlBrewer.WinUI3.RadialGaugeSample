@@ -645,6 +645,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
                     tick = radialGauge._compositor.CreateSpriteVisual();
                     tick.Size = new Vector2((float)radialGauge.TickWidth, (float)radialGauge.TickLength);
                     tick.Brush = radialGauge._compositor.CreateColorBrush(radialGauge.TickBrush.Color);
+                    tick.Opacity = (float)radialGauge.TickBrush.Opacity;
                     tick.Offset = new Vector3(100 - ((float)radialGauge.TickWidth / 2), 0.0f, 0);
                     tick.CenterPoint = new Vector3((float)radialGauge.TickWidth / 2, 100.0f, 0);
                     tick.RotationAngleInDegrees = (float)radialGauge.ValueToAngle(i);

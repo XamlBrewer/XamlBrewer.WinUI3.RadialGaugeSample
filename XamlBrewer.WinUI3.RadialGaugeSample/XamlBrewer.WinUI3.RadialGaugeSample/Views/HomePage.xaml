@@ -7,5 +7,41 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       mc:Ignorable="d"
       Background="Transparent">
-
+    <Grid Margin="0 0 0 80"
+          ColumnSpacing="20"
+          RowSpacing="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <toolkit:RadialGauge Grid.Column="0"
+                             Maximum="100"
+                             ScaleTickBrush="Transparent"
+                             TickBrush="{ThemeResource TenPercentContrastBrush}"
+                             NeedleBrush="OrangeRed"
+                             TrailBrush="{ThemeResource SystemAccentColorBrush}"
+                             ScaleBrush="{ThemeResource TenPercentContrastBrush}"
+                             Value="{x:Bind ValueSlider.Value, Mode=OneWay}"
+                             Unit="Before" />
+        <toolkit:RadialGauge2 Grid.Column="1"
+                              Maximum="100"
+                              ScaleTickBrush="Transparent"
+                              NeedleBrush="OrangeRed"
+                              TrailBrush="{ThemeResource SystemAccentColorBrush}"
+                              ScaleBrush="{ThemeResource TenPercentContrastBrush}"
+                              TickBrush="{ThemeResource TenPercentContrastBrush}"
+                              Value="{x:Bind ValueSlider.Value, Mode=OneWay}"
+                              Unit="After" />
+        <StackPanel Orientation="Vertical"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2">
+            <Slider x:Name="ValueSlider"
+                    Minimum="0"
+                    Maximum="100" />
+        </StackPanel>
+    </Grid>
 </Page>

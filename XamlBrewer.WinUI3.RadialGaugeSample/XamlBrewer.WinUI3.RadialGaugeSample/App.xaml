@@ -9,14 +9,14 @@
                 <ResourceDictionary x:Key="Dark">
                     <x:Double x:Key="BackgroundOpacity">.075</x:Double>
                     <SolidColorBrush x:Key="TenPercentContrastBrush"
-                                     Color="White"
-                                     Opacity=".1" />
+                                     Color="Silver"
+                                     Opacity=".3" />
                 </ResourceDictionary>
                 <ResourceDictionary x:Key="Light">
                     <x:Double x:Key="BackgroundOpacity">.15</x:Double>
                     <SolidColorBrush x:Key="TenPercentContrastBrush"
-                                     Color="Black"
-                                     Opacity=".1" />
+                                     Color="Silver"
+                                     Opacity=".3" />
                 </ResourceDictionary>
             </ResourceDictionary.ThemeDictionaries>
             <ResourceDictionary.MergedDictionaries>
@@ -27,7 +27,7 @@
             <Color x:Key="SystemAccentColor">CadetBlue</Color>
             <SolidColorBrush x:Key="SystemAccentColorBrush"
                              Color="{StaticResource SystemAccentColor}"
-                             Opacity=".33" />
+                             Opacity=".5" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>

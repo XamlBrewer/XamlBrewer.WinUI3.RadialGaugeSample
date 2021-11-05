@@ -6,7 +6,6 @@
 
 using System;
 using System.Numerics;
-using Microsoft.Toolkit.Uwp.UI.Helpers;
 using Windows.Foundation;
 using Windows.System;
 using Microsoft.UI.Composition;
@@ -188,11 +187,6 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
             SmallChange = 1;
             LargeChange = 10;
             Unloaded += RadialGauge_Unloaded;
-        }
-
-        private void ThemeListener_ThemeChanged(ThemeListener sender)
-        {
-            OnColorsChanged();
         }
 
         private void RadialGauge_KeyDown(object sender, KeyRoutedEventArgs e)
@@ -691,12 +685,13 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
             //////else
             //////{
             // Apply User Defined or Default Theme.
-            RestoreBrush(_needleBrush, NeedleBrushProperty);
-            RestoreBrush(_trailBrush, TrailBrushProperty);
-            RestoreBrush(_scaleBrush, ScaleBrushProperty);
-            RestoreBrush(_scaleTickBrush, ScaleTickBrushProperty);
-            RestoreBrush(_tickBrush, TickBrushProperty);
-            RestoreBrush(_foreground, ForegroundProperty);
+            _needleBrush = ReadLocalValue(NeedleBrushProperty) as SolidColorBrush;
+            _trailBrush = ReadLocalValue(TrailBrushProperty) as SolidColorBrush;
+            _scaleBrush = ReadLocalValue(ScaleBrushProperty) as SolidColorBrush;
+            _scaleTickBrush = ReadLocalValue(ScaleTickBrushProperty) as SolidColorBrush;
+            _tickBrush = ReadLocalValue(TickBrushProperty) as SolidColorBrush;
+            _scaleTickBrush = ReadLocalValue(ScaleTickBrushProperty) as SolidColorBrush;
+            _foreground = ReadLocalValue(ForegroundProperty) as SolidColorBrush;
             //////}
 
             OnScaleChanged(this);

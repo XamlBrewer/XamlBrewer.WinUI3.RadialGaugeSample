@@ -4,13 +4,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System;
-using System.Numerics;
-using Microsoft.Toolkit.Uwp.UI.Helpers;
-using Windows.Foundation;
-using Windows.System;
 using Microsoft.UI.Composition;
-using Windows.UI.Core;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Automation.Peers;
 using Microsoft.UI.Xaml.Controls;
@@ -18,6 +12,11 @@ using Microsoft.UI.Xaml.Controls.Primitives;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Shapes;
+using System;
+using System.Numerics;
+using Windows.Foundation;
+using Windows.System;
+using Windows.UI.Core;
 
 namespace Microsoft.Toolkit.Uwp.UI.Controls
 {
@@ -162,7 +161,6 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
         private const double Degrees2Radians = Math.PI / 180;
 
         // High-contrast accessibility
-        //////private static readonly ThemeListener ThemeListener = new ThemeListener();
         private SolidColorBrush _needleBrush;
         private Brush _trailBrush;
         private Brush _scaleBrush;
@@ -188,11 +186,6 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
             SmallChange = 1;
             LargeChange = 10;
             Unloaded += RadialGauge_Unloaded;
-        }
-
-        private void ThemeListener_ThemeChanged(ThemeListener sender)
-        {
-            OnColorsChanged();
         }
 
         private void RadialGauge_KeyDown(object sender, KeyRoutedEventArgs e)
@@ -223,7 +216,6 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
         {
             // Unregister event handlers.
             KeyDown -= RadialGauge_KeyDown;
-            //////ThemeListener.ThemeChanged -= ThemeListener_ThemeChanged;
             PointerReleased -= RadialGauge_PointerReleased;
             Unloaded -= RadialGauge_Unloaded;
         }
@@ -444,7 +436,6 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
 
             // Register event handlers.
             PointerReleased += RadialGauge_PointerReleased;
-            //////ThemeListener.ThemeChanged += ThemeListener_ThemeChanged;
             KeyDown += RadialGauge_KeyDown;
 
             // Apply color scheme.
@@ -710,12 +701,13 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
             //////else
             //////{
             // Apply User Defined or Default Theme.
-            RestoreBrush(_needleBrush, NeedleBrushProperty);
-            RestoreBrush(_trailBrush, TrailBrushProperty);
-            RestoreBrush(_scaleBrush, ScaleBrushProperty);
-            RestoreBrush(_scaleTickBrush, ScaleTickBrushProperty);
-            RestoreBrush(_tickBrush, TickBrushProperty);
-            RestoreBrush(_foreground, ForegroundProperty);
+            _needleBrush = ReadLocalValue(NeedleBrushProperty) as SolidColorBrush;
+            _trailBrush = ReadLocalValue(TrailBrushProperty) as SolidColorBrush;
+            _scaleBrush = ReadLocalValue(ScaleBrushProperty) as SolidColorBrush;
+            _scaleTickBrush = ReadLocalValue(ScaleTickBrushProperty) as SolidColorBrush;
+            _tickBrush = ReadLocalValue(TickBrushProperty) as SolidColorBrush;
+            _scaleTickBrush = ReadLocalValue(ScaleTickBrushProperty) as SolidColorBrush;
+            _foreground = ReadLocalValue(ForegroundProperty) as SolidColorBrush;
             //////}
 
             OnScaleChanged(this);

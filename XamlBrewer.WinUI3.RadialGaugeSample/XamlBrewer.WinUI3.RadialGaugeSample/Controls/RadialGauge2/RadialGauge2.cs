@@ -119,7 +119,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
         /// Identifies the ScaleTickWidth dependency property.
         /// </summary>
         public static readonly DependencyProperty ScaleTickWidthProperty =
-            DependencyProperty.Register(nameof(ScaleTickWidth), typeof(double), typeof(RadialGauge2), new PropertyMetadata(1d, OnFaceChanged));
+            DependencyProperty.Register(nameof(ScaleTickWidth), typeof(double), typeof(RadialGauge2), new PropertyMetadata(2d, OnFaceChanged));
 
         /// <summary>
         /// Identifies the TickWidth dependency property.
@@ -159,14 +159,6 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
 
         // For convenience.
         private const double Degrees2Radians = Math.PI / 180;
-
-        // High-contrast accessibility
-        private SolidColorBrush _needleBrush;
-        private Brush _trailBrush;
-        private Brush _scaleBrush;
-        private SolidColorBrush _scaleTickBrush;
-        private SolidColorBrush _tickBrush;
-        private Brush _foreground;
 
         private double _normalizedMinAngle;
         private double _normalizedMaxAngle;
@@ -425,21 +417,12 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
         /// </summary>
         protected override void OnApplyTemplate()
         {
-            // Remember local brushes.
-            _needleBrush = ReadLocalValue(NeedleBrushProperty) as SolidColorBrush;
-            _trailBrush = ReadLocalValue(TrailBrushProperty) as SolidColorBrush;
-            _scaleBrush = ReadLocalValue(ScaleBrushProperty) as SolidColorBrush;
-            _scaleTickBrush = ReadLocalValue(ScaleTickBrushProperty) as SolidColorBrush;
-            _tickBrush = ReadLocalValue(TickBrushProperty) as SolidColorBrush;
-            _scaleTickBrush = ReadLocalValue(ScaleTickBrushProperty) as SolidColorBrush;
-            _foreground = ReadLocalValue(ForegroundProperty) as SolidColorBrush;
-
             // Register event handlers.
             PointerReleased += RadialGauge_PointerReleased;
             KeyDown += RadialGauge_KeyDown;
 
             // Apply color scheme.
-            OnColorsChanged();
+            OnScaleChanged(this);
 
             base.OnApplyTemplate();
         }
@@ -684,49 +667,6 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
             radialGauge._root.Children.InsertAtTop(radialGauge._needle);
 
             OnValueChanged(radialGauge);
-        }
-
-        private void OnColorsChanged()
-        {
-            //////if (ThemeListener.IsHighContrast)
-            //////{
-            //////    // Apply High Contrast Theme.
-            //////    ClearBrush(_needleBrush, NeedleBrushProperty);
-            //////    ClearBrush(_trailBrush, TrailBrushProperty);
-            //////    ClearBrush(_scaleBrush, ScaleBrushProperty);
-            //////    ClearBrush(_scaleTickBrush, ScaleTickBrushProperty);
-            //////    ClearBrush(_tickBrush, TickBrushProperty);
-            //////    ClearBrush(_foreground, ForegroundProperty);
-            //////}
-            //////else
-            //////{
-            // Apply User Defined or Default Theme.
-            _needleBrush = ReadLocalValue(NeedleBrushProperty) as SolidColorBrush;
-            _trailBrush = ReadLocalValue(TrailBrushProperty) as SolidColorBrush;
-            _scaleBrush = ReadLocalValue(ScaleBrushProperty) as SolidColorBrush;
-            _scaleTickBrush = ReadLocalValue(ScaleTickBrushProperty) as SolidColorBrush;
-            _tickBrush = ReadLocalValue(TickBrushProperty) as SolidColorBrush;
-            _scaleTickBrush = ReadLocalValue(ScaleTickBrushProperty) as SolidColorBrush;
-            _foreground = ReadLocalValue(ForegroundProperty) as SolidColorBrush;
-            //////}
-
-            OnScaleChanged(this);
-        }
-
-        private void ClearBrush(Brush brush, DependencyProperty prop)
-        {
-            if (brush != null)
-            {
-                ClearValue(prop);
-            }
-        }
-
-        private void RestoreBrush(Brush source, DependencyProperty prop)
-        {
-            if (source != null)
-            {
-                SetValue(prop, source);
-            }
         }
 
         private void RadialGauge_ManipulationDelta(object sender, ManipulationDeltaRoutedEventArgs e)

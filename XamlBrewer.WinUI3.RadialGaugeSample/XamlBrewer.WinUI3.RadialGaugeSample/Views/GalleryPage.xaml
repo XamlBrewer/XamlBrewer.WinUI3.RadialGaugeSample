@@ -73,9 +73,9 @@
                                      TrailBrush="{StaticResource SystemAccentColorBrush}"
                                      ScaleTickBrush="Transparent"
                                      ScaleBrush="{ThemeResource TenPercentContrastBrush}"
-                                     NeedleWidth="2"
-                                     NeedleLength="90"
-                                     ScaleWidth="4"
+                                     NeedleWidth="4"
+                                     ScaleWidth="8"
+                                     ScalePadding="8"
                                      VerticalAlignment="Center"
                                      HorizontalAlignment="Center"
                                      Grid.Row="1" />
@@ -126,7 +126,7 @@
                 </Grid>
             </Grid>
 
-            <!-- ... -->
+            <!-- 270° -->
             <Grid Padding="0 0 20 20">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto" />
@@ -142,27 +142,44 @@
                         Height="30"
                         Background="{StaticResource SystemAccentColorBrush}">
                     <TextBlock VerticalAlignment="Center"
-                               Padding="20 4">Yet Another Gauge</TextBlock>
+                               Padding="20 4">270°</TextBlock>
                 </Border>
-                <toolkit:RadialGauge Height="200"
+                <toolkit:RadialGauge x:Name="Gauge270"
+                                     Height="200"
                                      Width="200"
                                      Margin="10"
                                      NeedleBrush="Red"
+                                     TrailBrush="Transparent"
+                                     TickBrush="Yellow"
                                      Minimum="0"
                                      Maximum="100"
+                                     MinAngle="180"
+                                     MaxAngle="90"
+                                     ScaleTickBrush="Transparent"
+                                     ScaleBrush="Transparent"
+                                     TickLength="5"
+                                     Foreground="Transparent"
                                      Value="42"
                                      Unit="Units"
                                      IsInteractive="True"
-                                     TickBrush="Transparent"
-                                     TrailBrush="{StaticResource SystemAccentColorBrush}"
-                                     ScaleTickBrush="Transparent"
-                                     ScaleBrush="{ThemeResource TenPercentContrastBrush}"
-                                     NeedleWidth="4"
-                                     ScaleWidth="8"
-                                     ScalePadding="8"
                                      VerticalAlignment="Center"
                                      HorizontalAlignment="Center"
                                      Grid.Row="1" />
+                <Border Height="100"
+                        Width="100"
+                        Margin="10"
+                        VerticalAlignment="Bottom"
+                        HorizontalAlignment="Right"
+                        Grid.Row="1">
+                    <TextBlock HorizontalAlignment="Center"
+                               HorizontalTextAlignment="Center"
+                               VerticalAlignment="Center">
+                        <Run Text="{x:Bind Gauge270.Value.ToString('N0', x:Null), Mode=OneWay}" />
+                        <LineBreak />
+                        <Run Text="{x:Bind Gauge270.Unit}" />
+                    </TextBlock>
+                </Border>
+
             </Grid>
 
             <!-- Default Interactive (Less Windows 8) -->
@@ -226,9 +243,9 @@
                                       TrailBrush="{StaticResource SystemAccentColorBrush}"
                                       ScaleTickBrush="Transparent"
                                       ScaleBrush="{ThemeResource TenPercentContrastBrush}"
-                                      NeedleWidth="2"
-                                      NeedleLength="90"
-                                      ScaleWidth="4"
+                                      NeedleWidth="4"
+                                      ScalePadding="8"
+                                      ScaleWidth="8"
                                       VerticalAlignment="Center"
                                       HorizontalAlignment="Center"
                                       Grid.Row="1" />
@@ -279,7 +296,7 @@
                 </Grid>
             </Grid>
 
-            <!-- ... -->
+            <!-- 270° -->
             <Grid Padding="0 0 20 20">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto" />
@@ -295,24 +312,41 @@
                         Height="30"
                         Background="{StaticResource SystemAccentColorBrush}">
                     <TextBlock VerticalAlignment="Center"
-                               Padding="20 4">Yet Another Gauge</TextBlock>
+                               Padding="20 4">270°</TextBlock>
                 </Border>
-                <toolkit:RadialGauge2 Height="200"
+                <Border Height="100"
+                        Width="100"
+                        Margin="10"
+                        VerticalAlignment="Bottom"
+                        HorizontalAlignment="Right"
+                        Grid.Row="1">
+                    <TextBlock HorizontalAlignment="Center"
+                               HorizontalTextAlignment="Center"
+                               VerticalAlignment="Center">
+                        <Run Text="{x:Bind Gauge270_2.Value.ToString('N0', x:Null), Mode=OneWay}" />
+                        <LineBreak />
+                        <Run Text="{x:Bind Gauge270_2.Unit}" />
+                    </TextBlock>
+                              
+                </Border>
+                <toolkit:RadialGauge2 x:Name="Gauge270_2"
+                                      Height="200"
                                       Width="200"
                                       Margin="10"
                                       NeedleBrush="Red"
+                                      TrailBrush="Transparent"
+                                      TickBrush="Yellow"
                                       Minimum="0"
                                       Maximum="100"
+                                      MinAngle="180"
+                                      MaxAngle="90"
+                                      ScaleTickBrush="Transparent"
+                                      ScaleBrush="Transparent"
+                                      TickLength="5"
+                                      Foreground="Transparent"
                                       Value="42"
                                       Unit="Units"
                                       IsInteractive="True"
-                                      TickBrush="Transparent"
-                                      TrailBrush="{StaticResource SystemAccentColorBrush}"
-                                      ScaleTickBrush="Transparent"
-                                      ScaleBrush="{ThemeResource TenPercentContrastBrush}"
-                                      NeedleWidth="4"
-                                      ScalePadding="8"
-                                      ScaleWidth="8"
                                       VerticalAlignment="Center"
                                       HorizontalAlignment="Center"
                                       Grid.Row="1" />

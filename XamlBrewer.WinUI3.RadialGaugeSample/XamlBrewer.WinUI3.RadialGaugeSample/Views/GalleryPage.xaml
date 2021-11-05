@@ -1,0 +1,324 @@
+﻿<Page x:Class="XamlBrewer.WinUI3.RadialGaugeSample.Views.GalleryPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:XamlBrewer.WinUI3.RadialGaugeSample.Views"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:toolkit="using:Microsoft.Toolkit.Uwp.UI.Controls"
+      mc:Ignorable="d"
+      Background="Transparent">
+    <Grid Margin="0 0 0 80">
+        <GridView VerticalAlignment="Stretch"
+                  HorizontalAlignment="Stretch"
+                  SelectionMode="None">
+
+            <!-- Default Interactive (so Windows 8) -->
+            <Grid Padding="0 0 20 20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Border CornerRadius="4"
+                        Grid.RowSpan="2"
+                        Background="{ThemeResource TenPercentContrastBrush}">
+                </Border>
+
+                <Border CornerRadius="4 4 0 0"
+                        Height="30"
+                        Background="{StaticResource SystemAccentColorBrush}">
+                    <TextBlock VerticalAlignment="Center"
+                               Padding="20 4">Default</TextBlock>
+                </Border>
+                <toolkit:RadialGauge Height="200"
+                                     Width="200"
+                                     Margin="10"
+                                     NeedleBrush="{StaticResource SystemAccentColorBrush}"
+                                     Minimum="0"
+                                     Maximum="100"
+                                     Value="42"
+                                     Unit="Units"
+                                     IsInteractive="True"
+                                     VerticalAlignment="Center"
+                                     HorizontalAlignment="Center"
+                                     Grid.Row="1" />
+            </Grid>
+
+            <!-- Slim -->
+            <Grid Padding="0 0 20 20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Border CornerRadius="4"
+                        Grid.RowSpan="2"
+                        Background="{ThemeResource TenPercentContrastBrush}">
+                </Border>
+
+                <Border CornerRadius="4 4 0 0"
+                        Height="30"
+                        Background="{StaticResource SystemAccentColorBrush}">
+                    <TextBlock VerticalAlignment="Center"
+                               Padding="20 4">Slim</TextBlock>
+                </Border>
+                <toolkit:RadialGauge Height="200"
+                                     Width="200"
+                                     Margin="10"
+                                     NeedleBrush="Red"
+                                     Minimum="0"
+                                     Maximum="100"
+                                     Value="42"
+                                     Unit="Units"
+                                     IsInteractive="True"
+                                     TickBrush="Transparent"
+                                     TrailBrush="{StaticResource SystemAccentColorBrush}"
+                                     ScaleTickBrush="Transparent"
+                                     ScaleBrush="{ThemeResource TenPercentContrastBrush}"
+                                     NeedleWidth="2"
+                                     NeedleLength="90"
+                                     ScaleWidth="4"
+                                     VerticalAlignment="Center"
+                                     HorizontalAlignment="Center"
+                                     Grid.Row="1" />
+            </Grid>
+
+            <!-- Image -->
+            <Grid Padding="0 0 20 20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Border CornerRadius="4"
+                        Grid.RowSpan="2"
+                        Background="{ThemeResource TenPercentContrastBrush}">
+                </Border>
+
+                <Border CornerRadius="4 4 0 0"
+                        Height="30"
+                        Background="{StaticResource SystemAccentColorBrush}">
+                    <TextBlock VerticalAlignment="Center"
+                               Padding="20 4">Background Image</TextBlock>
+                </Border>
+                <Grid Grid.Row="1">
+                    <Image Height="200"
+                           Width="200"
+                           Source="\Assets\TemperatureGauge.png" />
+
+                    <toolkit:RadialGauge Height="200"
+                                         Width="200"
+                                         Margin="10"
+                                         NeedleBrush="#FF7F00"
+                                         Minimum="0"
+                                         Maximum="135"
+                                         Value="42"
+                                         Unit=""
+                                         Foreground="White"
+                                         IsInteractive="True"
+                                         TickBrush="Transparent"
+                                         TrailBrush="Transparent"
+                                         ScaleTickBrush="Transparent"
+                                         ScaleBrush="Transparent"
+                                         NeedleWidth="3"
+                                         NeedleLength="90"
+                                         MinAngle="-135"
+                                         MaxAngle="135"
+                                         VerticalAlignment="Center"
+                                         HorizontalAlignment="Center" />
+                </Grid>
+            </Grid>
+
+            <!-- ... -->
+            <Grid Padding="0 0 20 20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Border CornerRadius="4"
+                        Grid.RowSpan="2"
+                        Background="{ThemeResource TenPercentContrastBrush}">
+                </Border>
+
+                <Border CornerRadius="4 4 0 0"
+                        Height="30"
+                        Background="{StaticResource SystemAccentColorBrush}">
+                    <TextBlock VerticalAlignment="Center"
+                               Padding="20 4">Yet Another Gauge</TextBlock>
+                </Border>
+                <toolkit:RadialGauge Height="200"
+                                     Width="200"
+                                     Margin="10"
+                                     NeedleBrush="Red"
+                                     Minimum="0"
+                                     Maximum="100"
+                                     Value="42"
+                                     Unit="Units"
+                                     IsInteractive="True"
+                                     TickBrush="Transparent"
+                                     TrailBrush="{StaticResource SystemAccentColorBrush}"
+                                     ScaleTickBrush="Transparent"
+                                     ScaleBrush="{ThemeResource TenPercentContrastBrush}"
+                                     NeedleWidth="4"
+                                     ScaleWidth="8"
+                                     ScalePadding="8"
+                                     VerticalAlignment="Center"
+                                     HorizontalAlignment="Center"
+                                     Grid.Row="1" />
+            </Grid>
+
+            <!-- Default Interactive (Less Windows 8) -->
+            <Grid Padding="0 0 20 20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Border CornerRadius="4"
+                        Grid.RowSpan="2"
+                        Background="{ThemeResource TenPercentContrastBrush}">
+                </Border>
+
+                <Border CornerRadius="4 4 0 0"
+                        Height="30"
+                        Background="{StaticResource SystemAccentColorBrush}">
+                    <TextBlock VerticalAlignment="Center"
+                               Padding="20 4">Default</TextBlock>
+                </Border>
+                <toolkit:RadialGauge2 Height="200"
+                                      Width="200"
+                                      Margin="10"
+                                      NeedleBrush="{StaticResource SystemAccentColorBrush}"
+                                      Minimum="0"
+                                      Maximum="100"
+                                      Value="42"
+                                      Unit="Units"
+                                      IsInteractive="True"
+                                      VerticalAlignment="Center"
+                                      HorizontalAlignment="Center"
+                                      Grid.Row="1" />
+            </Grid>
+
+            <!-- Slim -->
+            <Grid Padding="0 0 20 20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Border CornerRadius="4"
+                        Grid.RowSpan="2"
+                        Background="{ThemeResource TenPercentContrastBrush}">
+                </Border>
+
+                <Border CornerRadius="4 4 0 0"
+                        Height="30"
+                        Background="{StaticResource SystemAccentColorBrush}">
+                    <TextBlock VerticalAlignment="Center"
+                               Padding="20 4">Slim</TextBlock>
+                </Border>
+                <toolkit:RadialGauge2 Height="200"
+                                      Width="200"
+                                      Margin="10"
+                                      NeedleBrush="Red"
+                                      Minimum="0"
+                                      Maximum="100"
+                                      Value="42"
+                                      Unit="Units"
+                                      IsInteractive="True"
+                                      TickBrush="Transparent"
+                                      TrailBrush="{StaticResource SystemAccentColorBrush}"
+                                      ScaleTickBrush="Transparent"
+                                      ScaleBrush="{ThemeResource TenPercentContrastBrush}"
+                                      NeedleWidth="2"
+                                      NeedleLength="90"
+                                      ScaleWidth="4"
+                                      VerticalAlignment="Center"
+                                      HorizontalAlignment="Center"
+                                      Grid.Row="1" />
+            </Grid>
+
+            <!-- Image -->
+            <Grid Padding="0 0 20 20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Border CornerRadius="4"
+                        Grid.RowSpan="2"
+                        Background="{ThemeResource TenPercentContrastBrush}">
+                </Border>
+
+                <Border CornerRadius="4 4 0 0"
+                        Height="30"
+                        Background="{StaticResource SystemAccentColorBrush}">
+                    <TextBlock VerticalAlignment="Center"
+                               Padding="20 4">Background Image</TextBlock>
+                </Border>
+                <Grid Grid.Row="1">
+                    <Image Height="200"
+                           Width="200"
+                           Source="\Assets\TemperatureGauge.png" />
+
+                    <toolkit:RadialGauge2 Height="200"
+                                          Width="200"
+                                          Margin="10"
+                                          NeedleBrush="#FF7F00"
+                                          Minimum="0"
+                                          Maximum="135"
+                                          Value="42"
+                                          Unit=""
+                                          Foreground="White"
+                                          IsInteractive="True"
+                                          TickBrush="Transparent"
+                                          TrailBrush="Transparent"
+                                          ScaleTickBrush="Transparent"
+                                          ScaleBrush="Transparent"
+                                          NeedleWidth="3"
+                                          NeedleLength="90"
+                                          MinAngle="-135"
+                                          MaxAngle="135"
+                                          VerticalAlignment="Center"
+                                          HorizontalAlignment="Center" />
+                </Grid>
+            </Grid>
+
+            <!-- ... -->
+            <Grid Padding="0 0 20 20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Border CornerRadius="4"
+                        Grid.RowSpan="2"
+                        Background="{ThemeResource TenPercentContrastBrush}">
+                </Border>
+
+                <Border CornerRadius="4 4 0 0"
+                        Height="30"
+                        Background="{StaticResource SystemAccentColorBrush}">
+                    <TextBlock VerticalAlignment="Center"
+                               Padding="20 4">Yet Another Gauge</TextBlock>
+                </Border>
+                <toolkit:RadialGauge2 Height="200"
+                                      Width="200"
+                                      Margin="10"
+                                      NeedleBrush="Red"
+                                      Minimum="0"
+                                      Maximum="100"
+                                      Value="42"
+                                      Unit="Units"
+                                      IsInteractive="True"
+                                      TickBrush="Transparent"
+                                      TrailBrush="{StaticResource SystemAccentColorBrush}"
+                                      ScaleTickBrush="Transparent"
+                                      ScaleBrush="{ThemeResource TenPercentContrastBrush}"
+                                      NeedleWidth="4"
+                                      ScalePadding="8"
+                                      ScaleWidth="8"
+                                      VerticalAlignment="Center"
+                                      HorizontalAlignment="Center"
+                                      Grid.Row="1" />
+            </Grid>
+
+        </GridView>
+
+    </Grid>
+</Page>

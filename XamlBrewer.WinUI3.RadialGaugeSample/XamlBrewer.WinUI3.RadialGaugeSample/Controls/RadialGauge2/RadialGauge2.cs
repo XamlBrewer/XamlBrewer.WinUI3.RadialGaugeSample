@@ -132,7 +132,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
         /// Identifies the TickLength dependency property.
         /// </summary>
         public static readonly DependencyProperty TickLengthProperty =
-            DependencyProperty.Register(nameof(TickLength), typeof(double), typeof(RadialGauge2), new PropertyMetadata(5d, OnFaceChanged));
+            DependencyProperty.Register(nameof(TickLength), typeof(double), typeof(RadialGauge2), new PropertyMetadata(10d, OnFaceChanged));
 
         /// <summary>
         /// Identifies the MinAngle dependency property.

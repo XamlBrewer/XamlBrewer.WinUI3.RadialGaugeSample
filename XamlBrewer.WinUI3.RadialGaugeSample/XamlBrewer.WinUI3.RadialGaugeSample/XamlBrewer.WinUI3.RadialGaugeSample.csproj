@@ -13,6 +13,7 @@
   <ItemGroup>
     <Content Remove="Assets\About.png" />
     <Content Remove="Assets\background.jpg" />
+    <Content Remove="Assets\gallery.png" />
     <Content Remove="Assets\Home.png" />
     <Content Remove="Assets\TemperatureGauge.png" />
   </ItemGroup>
@@ -22,6 +23,7 @@
     <None Remove="Controls\RadialGauge2\RadialGauge2.xaml" />
     <None Remove="Shell.xaml" />
     <None Remove="Views\AboutPage.xaml" />
+    <None Remove="Views\GalleryPage.xaml" />
     <None Remove="Views\HomePage.xaml" />
   </ItemGroup>
 
@@ -48,6 +50,9 @@
     </Page>
     <Page Include="Shell.xaml" />
     <Page Include="Views\AboutPage.xaml" />
+    <Page Include="Views\GalleryPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\HomePage.xaml" />
   </ItemGroup>
 

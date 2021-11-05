@@ -45,6 +45,14 @@
                                     ShowAsMonochrome="False" />
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
+                <NavigationViewItem Content="Gallery"
+                                    Tag="XamlBrewer.WinUI3.RadialGaugeSample.Views.GalleryPage"
+                                    ToolTipService.ToolTip="Gallery">
+                    <NavigationViewItem.Icon>
+                        <BitmapIcon UriSource="/Assets/gallery.png"
+                                    ShowAsMonochrome="False" />
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
             </NavigationView.MenuItems>
             <NavigationView.FooterMenuItems>
                 <NavigationViewItem Content="About"

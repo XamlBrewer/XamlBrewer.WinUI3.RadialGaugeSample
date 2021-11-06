@@ -1,5 +1,5 @@
 ﻿<!-- https://github.com/CommunityToolkit/WindowsCommunityToolkit/blob/main/Microsoft.Toolkit.Uwp.UI.Controls.Input/RadialGauge/RadialGauge.xaml -->
-    
+
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="using:Microsoft.Toolkit.Uwp.UI.Controls">
@@ -90,20 +90,21 @@
                         <Grid x:Name="PART_Container"
                               Width="200"
                               Height="200"
-                              Background="Transparent">
+                              Background="Transparent"
+                              Margin="2">
 
                             <!--  Scale  -->
                             <Path Name="PART_Scale"
                                   Stroke="{TemplateBinding ScaleBrush}"
-                                  StrokeThickness="{TemplateBinding ScaleWidth}" 
+                                  StrokeThickness="{TemplateBinding ScaleWidth}"
                                   StrokeStartLineCap="Round"
-                                  StrokeEndLineCap="Round"/>
+                                  StrokeEndLineCap="Round" />
 
                             <!--  Trail  -->
                             <Path Name="PART_Trail"
                                   Stroke="{TemplateBinding TrailBrush}"
                                   StrokeThickness="{TemplateBinding ScaleWidth}"
-                                  StrokeStartLineCap="Round"/>
+                                  StrokeStartLineCap="Round" />
 
                             <!--  Value and Unit  -->
                             <StackPanel HorizontalAlignment="Center"

@@ -613,36 +613,46 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
             if (radialGauge.TickSpacing > 0)
             {
                 // Ticks.
-                var tick = radialGauge._compositor.CreateShapeVisual();
-                tick.Size = new Vector2((float)radialGauge.Height, (float)radialGauge.Width);
-                tick.BorderMode = CompositionBorderMode.Soft;
-                tick.Opacity = (float)radialGauge.TickBrush.Opacity;
+                var ticks = radialGauge._compositor.CreateShapeVisual();
+                ticks.Size = new Vector2((float)radialGauge.Height, (float)radialGauge.Width);
+                ticks.BorderMode = CompositionBorderMode.Soft;
+                ticks.Opacity = (float)radialGauge.TickBrush.Opacity;
+
+                var roundedTickRectangle = radialGauge._compositor.CreateRoundedRectangleGeometry();
+                roundedTickRectangle.Size = new Vector2((float)radialGauge.TickWidth, (float)radialGauge.TickLength);
+                roundedTickRectangle.CornerRadius = new Vector2((float)radialGauge.TickWidth / 2, (float)radialGauge.TickWidth / 2);
+
+                var tssFillBrush = radialGauge._compositor.CreateColorBrush(radialGauge.TickBrush.Color);
+                var tssOffset = new Vector2(100 - ((float)radialGauge.TickWidth / 2), 0.0f);
+                var tssCenterPoint = new Vector2((float)radialGauge.TickWidth / 2, 100.0f);
+
                 for (double i = radialGauge.Minimum; i <= radialGauge.Maximum; i += radialGauge.TickSpacing)
                 {
-                    var roundedTickRectangle = radialGauge._compositor.CreateRoundedRectangleGeometry();
-                    roundedTickRectangle.Size = new Vector2((float)radialGauge.TickWidth, (float)radialGauge.TickLength);
-                    roundedTickRectangle.CornerRadius = new Vector2((float)radialGauge.TickWidth / 2, (float)radialGauge.TickWidth / 2);
-
                     var tickSpriteShape = radialGauge._compositor.CreateSpriteShape(roundedTickRectangle);
-                    tickSpriteShape.FillBrush = radialGauge._compositor.CreateColorBrush(radialGauge.TickBrush.Color);
-                    tickSpriteShape.Offset = new Vector2(100 - ((float)radialGauge.TickWidth / 2), 0.0f);
-                    tickSpriteShape.CenterPoint = new Vector2((float)radialGauge.TickWidth / 2, 100.0f);
+                    tickSpriteShape.FillBrush = tssFillBrush;
+                    tickSpriteShape.Offset = tssOffset;
+                    tickSpriteShape.CenterPoint = tssCenterPoint;
                     tickSpriteShape.RotationAngleInDegrees = (float)radialGauge.ValueToAngle(i);
 
-                    tick.Shapes.Add(tickSpriteShape);
+                    ticks.Shapes.Add(tickSpriteShape);
                 }
 
-                radialGauge._root.Children.InsertAtTop(tick);
+                radialGauge._root.Children.InsertAtTop(ticks);
 
                 // Scale Ticks.
                 SpriteVisual scaleTick;
+                var stSize = new Vector2((float)radialGauge.ScaleTickWidth, (float)radialGauge.ScaleWidth);
+                var stBrush = radialGauge._compositor.CreateColorBrush(radialGauge.ScaleTickBrush.Color);
+                var stOffset = new Vector3(100 - ((float)radialGauge.ScaleTickWidth / 2), (float)radialGauge.ScalePadding, 0);
+                var stCenterPoint = new Vector3((float)radialGauge.ScaleTickWidth / 2, 100 - (float)radialGauge.ScalePadding, 0);
+                
                 for (double i = radialGauge.Minimum; i <= radialGauge.Maximum; i += radialGauge.TickSpacing)
                 {
                     scaleTick = radialGauge._compositor.CreateSpriteVisual();
-                    scaleTick.Size = new Vector2((float)radialGauge.ScaleTickWidth, (float)radialGauge.ScaleWidth);
-                    scaleTick.Brush = radialGauge._compositor.CreateColorBrush(radialGauge.ScaleTickBrush.Color);
-                    scaleTick.Offset = new Vector3(100 - ((float)radialGauge.ScaleTickWidth / 2), (float)radialGauge.ScalePadding, 0);
-                    scaleTick.CenterPoint = new Vector3((float)radialGauge.ScaleTickWidth / 2, 100 - (float)radialGauge.ScalePadding, 0);
+                    scaleTick.Size = stSize;
+                    scaleTick.Brush = stBrush;
+                    scaleTick.Offset = stOffset;
+                    scaleTick.CenterPoint = stCenterPoint;
                     scaleTick.RotationAngleInDegrees = (float)radialGauge.ValueToAngle(i);
                     radialGauge._root.Children.InsertAtTop(scaleTick);
                 }

@@ -5,6 +5,7 @@
 // See the LICENSE file in the project root for more information.
 
 using Microsoft.UI.Composition;
+using Microsoft.UI.Input;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Automation.Peers;
 using Microsoft.UI.Xaml.Controls;
@@ -168,7 +169,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
         private ShapeVisual _needle;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RadialGauge"/> class.
+        /// Initializes a new instance of the <see cref="RadialGauge2"/> class.
         /// Create a default radial gauge control.
         /// </summary>
         public RadialGauge2()
@@ -183,11 +184,10 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
         private void RadialGauge_KeyDown(object sender, KeyRoutedEventArgs e)
         {
             double step = SmallChange;
-            var ctrl = Window.Current.CoreWindow.GetKeyState(VirtualKey.Control);
-            if (ctrl.HasFlag(CoreVirtualKeyStates.Down))
+            if (KeyboardInput.GetKeyStateForCurrentThread(VirtualKey.Control) == CoreVirtualKeyStates.Down)
             {
                 step = LargeChange;
-            }
+            };
 
             step = Math.Max(StepSize, step);
             if ((e.Key == VirtualKey.Left) || (e.Key == VirtualKey.Down))
@@ -407,10 +407,10 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
         protected double NormalizedMaxAngle => _normalizedMaxAngle;
 
         /// <inheritdoc/>
-        //protected override AutomationPeer OnCreateAutomationPeer()
-        //{
-        //    return new RadialGaugeAutomationPeer(this);
-        //}
+        protected override AutomationPeer OnCreateAutomationPeer()
+        {
+            return new RadialGauge2AutomationPeer(this);
+        }
 
         /// <summary>
         /// Update the visual state of the control when its template is changed.
@@ -448,7 +448,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
             base.OnValueChanged(oldValue, newValue);
             if (AutomationPeer.ListenerExists(AutomationEvents.LiveRegionChanged))
             {
-                var peer = FrameworkElementAutomationPeer.FromElement(this) as RadialGaugeAutomationPeer;
+                var peer = FrameworkElementAutomationPeer.FromElement(this) as RadialGauge2AutomationPeer;
                 peer?.RaiseValueChangedEvent(oldValue, newValue);
             }
         }

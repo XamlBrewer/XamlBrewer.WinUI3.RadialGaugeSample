@@ -4,12 +4,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System;
-using System.Numerics;
-using Windows.Foundation;
-using Windows.System;
 using Microsoft.UI.Composition;
-using Windows.UI.Core;
+using Microsoft.UI.Input;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Automation.Peers;
 using Microsoft.UI.Xaml.Controls;
@@ -17,6 +13,11 @@ using Microsoft.UI.Xaml.Controls.Primitives;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Shapes;
+using System;
+using System.Numerics;
+using Windows.Foundation;
+using Windows.System;
+using Windows.UI.Core;
 
 namespace Microsoft.Toolkit.Uwp.UI.Controls
 {
@@ -192,11 +193,10 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
         private void RadialGauge_KeyDown(object sender, KeyRoutedEventArgs e)
         {
             double step = SmallChange;
-            var ctrl = Window.Current.CoreWindow.GetKeyState(VirtualKey.Control);
-            if (ctrl.HasFlag(CoreVirtualKeyStates.Down))
+            if (KeyboardInput.GetKeyStateForCurrentThread(VirtualKey.Control) == CoreVirtualKeyStates.Down)
             {
                 step = LargeChange;
-            }
+            };
 
             step = Math.Max(StepSize, step);
             if ((e.Key == VirtualKey.Left) || (e.Key == VirtualKey.Down))

@@ -199,6 +199,7 @@
                     <TextBlock VerticalAlignment="Center"
                                Padding="20 4">Default</TextBlock>
                 </Border>
+                <!-- Transparent Needle -->
                 <toolkit:RadialGauge2 Height="200"
                                       Width="200"
                                       Margin="10"
@@ -327,7 +328,7 @@
                         <LineBreak />
                         <Run Text="{x:Bind Gauge270_2.Unit}" />
                     </TextBlock>
-                              
+
                 </Border>
                 <toolkit:RadialGauge2 x:Name="Gauge270_2"
                                       Height="200"

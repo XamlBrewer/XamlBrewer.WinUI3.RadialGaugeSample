@@ -166,7 +166,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
 
         private Compositor _compositor;
         private ContainerVisual _root;
-        private ShapeVisual _needle;
+        private CompositionSpriteShape _needle;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="RadialGauge2"/> class.
@@ -470,7 +470,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
                 // Needle
                 if (radialGauge._needle != null)
                 {
-                    radialGauge._needle.RotationAngleInDegrees = (float)radialGauge.ValueAngle;
+                   radialGauge._needle.RotationAngleInDegrees = (float)radialGauge.ValueAngle;
                 }
 
                 // Trail
@@ -653,28 +653,30 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
                     scaleTick.Brush = stBrush;
                     scaleTick.Offset = stOffset;
                     scaleTick.CenterPoint = stCenterPoint;
+                    scaleTick.Opacity = (float)radialGauge.ScaleBrush.Opacity;
                     scaleTick.RotationAngleInDegrees = (float)radialGauge.ValueToAngle(i);
                     radialGauge._root.Children.InsertAtTop(scaleTick);
                 }
             }
 
             // Needle.
+            var shapeVisual = radialGauge._compositor.CreateShapeVisual();
+            shapeVisual.Size = new Vector2((float)radialGauge.Height, (float)radialGauge.Width);
+            shapeVisual.BorderMode = CompositionBorderMode.Soft;
+            shapeVisual.Opacity = (float)radialGauge.NeedleBrush.Opacity;
+
             var roundedNeedleRectangle = radialGauge._compositor.CreateRoundedRectangleGeometry();
             roundedNeedleRectangle.Size = new Vector2((float)radialGauge.NeedleWidth, (float)radialGauge.NeedleLength);
             roundedNeedleRectangle.CornerRadius = new Vector2((float)radialGauge.NeedleWidth / 2, (float)radialGauge.NeedleWidth / 2);
 
-            var spriteShape = radialGauge._compositor.CreateSpriteShape(roundedNeedleRectangle);
-            spriteShape.FillBrush = radialGauge._compositor.CreateColorBrush(radialGauge.NeedleBrush.Color);
-            spriteShape.CenterPoint = new Vector2((float)radialGauge.NeedleWidth / 2, (float)radialGauge.NeedleLength);
+            radialGauge._needle = radialGauge._compositor.CreateSpriteShape(roundedNeedleRectangle);
+            radialGauge._needle.FillBrush = radialGauge._compositor.CreateColorBrush(radialGauge.NeedleBrush.Color);
+            radialGauge._needle.CenterPoint = new Vector2((float)radialGauge.NeedleWidth / 2, (float)radialGauge.NeedleLength);
+            radialGauge._needle.Offset = new Vector2(100 - ((float)radialGauge.NeedleWidth / 2), 100 - (float)radialGauge.NeedleLength);
 
-            radialGauge._needle = radialGauge._compositor.CreateShapeVisual();
-            radialGauge._needle.Shapes.Add(spriteShape);
+            shapeVisual.Shapes.Add(radialGauge._needle);
 
-            radialGauge._needle.Size = roundedNeedleRectangle.Size;
-            radialGauge._needle.CenterPoint = new Vector3((float)radialGauge.NeedleWidth / 2, (float)radialGauge.NeedleLength, 0);
-            radialGauge._needle.Offset = new Vector3(100 - ((float)radialGauge.NeedleWidth / 2), 100 - (float)radialGauge.NeedleLength, 0);
-            radialGauge._needle.BorderMode = CompositionBorderMode.Soft;
-            radialGauge._root.Children.InsertAtTop(radialGauge._needle);
+            radialGauge._root.Children.InsertAtTop(shapeVisual);
 
             OnValueChanged(radialGauge);
         }

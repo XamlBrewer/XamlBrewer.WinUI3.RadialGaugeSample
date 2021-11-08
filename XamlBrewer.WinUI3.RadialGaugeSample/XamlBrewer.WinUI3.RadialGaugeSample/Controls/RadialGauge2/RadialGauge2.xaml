@@ -91,7 +91,7 @@
                               Width="200"
                               Height="200"
                               Background="Transparent"
-                              Margin="2">
+                              Margin="0">
 
                             <!--  Scale  -->
                             <Path Name="PART_Scale"

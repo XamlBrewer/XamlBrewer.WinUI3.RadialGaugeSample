@@ -653,7 +653,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
                     scaleTick.Brush = stBrush;
                     scaleTick.Offset = stOffset;
                     scaleTick.CenterPoint = stCenterPoint;
-                    scaleTick.Opacity = (float)radialGauge.ScaleBrush.Opacity;
+                    scaleTick.Opacity = (float)radialGauge.ScaleTickBrush.Opacity;
                     scaleTick.RotationAngleInDegrees = (float)radialGauge.ValueToAngle(i);
                     radialGauge._root.Children.InsertAtTop(scaleTick);
                 }

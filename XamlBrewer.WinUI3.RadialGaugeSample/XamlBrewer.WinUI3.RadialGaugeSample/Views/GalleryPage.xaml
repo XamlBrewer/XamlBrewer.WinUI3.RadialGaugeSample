@@ -199,11 +199,12 @@
                     <TextBlock VerticalAlignment="Center"
                                Padding="20 4">Default</TextBlock>
                 </Border>
-                <!-- Transparent Needle -->
+                <!-- Transparent Needle and Scale Ticks -->
                 <toolkit:RadialGauge2 Height="200"
                                       Width="200"
                                       Margin="10"
                                       NeedleBrush="{StaticResource SystemAccentColorBrush}"
+                                      ScaleTickBrush="{ThemeResource TenPercentContrastBrush}"
                                       Minimum="0"
                                       Maximum="100"
                                       Value="42"

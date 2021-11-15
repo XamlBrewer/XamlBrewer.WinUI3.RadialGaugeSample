@@ -14,8 +14,6 @@
                                      Color="{ThemeResource SystemColorWindowTextColor}" />
                     <SolidColorBrush x:Key="SystemAccentColorBrush"
                                      Color="{StaticResource SystemAccentColor}" />
-                    <!--<SolidColorBrush x:Key="SystemAccentColorBrush"
-                                     Color="{ThemeResource SystemColorWindowColor}" />-->
                     <SolidColorBrush x:Key="AppNeedleBrush"
                                      Color="{ThemeResource SystemAccentColor}" />
                 </ResourceDictionary>
@@ -49,7 +47,6 @@
                 <ResourceDictionary Source="\Controls\RadialGauge\RadialGauge.xaml" />
                 <ResourceDictionary Source="\Controls\RadialGauge2\RadialGauge2.xaml" />
             </ResourceDictionary.MergedDictionaries>
-            
         </ResourceDictionary>
     </Application.Resources>
 </Application>

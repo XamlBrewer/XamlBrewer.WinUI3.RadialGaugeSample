@@ -25,14 +25,14 @@
 
                 <Border CornerRadius="4 4 0 0"
                         Height="30"
-                        Background="{StaticResource SystemAccentColorBrush}">
+                        Background="{ThemeResource SystemAccentColorBrush}">
                     <TextBlock VerticalAlignment="Center"
                                Padding="20 4">Default</TextBlock>
                 </Border>
                 <toolkit:RadialGauge Height="200"
                                      Width="200"
                                      Margin="10"
-                                     NeedleBrush="{StaticResource SystemAccentColorBrush}"
+                                     NeedleBrush="{ThemeResource SystemAccentColorBrush}"
                                      Minimum="0"
                                      Maximum="100"
                                      Value="42"
@@ -56,7 +56,7 @@
 
                 <Border CornerRadius="4 4 0 0"
                         Height="30"
-                        Background="{StaticResource SystemAccentColorBrush}">
+                        Background="{ThemeResource SystemAccentColorBrush}">
                     <TextBlock VerticalAlignment="Center"
                                Padding="20 4">Slim</TextBlock>
                 </Border>
@@ -70,7 +70,7 @@
                                      Unit="Units"
                                      IsInteractive="True"
                                      TickBrush="Transparent"
-                                     TrailBrush="{StaticResource SystemAccentColorBrush}"
+                                     TrailBrush="{ThemeResource SystemAccentColorBrush}"
                                      ScaleTickBrush="Transparent"
                                      ScaleBrush="{ThemeResource TenPercentContrastBrush}"
                                      NeedleWidth="4"
@@ -94,7 +94,7 @@
 
                 <Border CornerRadius="4 4 0 0"
                         Height="30"
-                        Background="{StaticResource SystemAccentColorBrush}">
+                        Background="{ThemeResource SystemAccentColorBrush}">
                     <TextBlock VerticalAlignment="Center"
                                Padding="20 4">Background Image</TextBlock>
                 </Border>
@@ -140,7 +140,7 @@
 
                 <Border CornerRadius="4 4 0 0"
                         Height="30"
-                        Background="{StaticResource SystemAccentColorBrush}">
+                        Background="{ThemeResource SystemAccentColorBrush}">
                     <TextBlock VerticalAlignment="Center"
                                Padding="20 4">270°</TextBlock>
                 </Border>
@@ -195,7 +195,7 @@
 
                 <Border CornerRadius="4 4 0 0"
                         Height="30"
-                        Background="{StaticResource SystemAccentColorBrush}">
+                        Background="{ThemeResource SystemAccentColorBrush}">
                     <TextBlock VerticalAlignment="Center"
                                Padding="20 4">Default</TextBlock>
                 </Border>
@@ -203,7 +203,7 @@
                 <toolkit:RadialGauge2 Height="200"
                                       Width="200"
                                       Margin="10"
-                                      NeedleBrush="{StaticResource SystemAccentColorBrush}"
+                                      NeedleBrush="{ThemeResource SystemAccentColorBrush}"
                                       ScaleTickBrush="{ThemeResource TenPercentContrastBrush}"
                                       Minimum="0"
                                       Maximum="100"
@@ -228,7 +228,7 @@
 
                 <Border CornerRadius="4 4 0 0"
                         Height="30"
-                        Background="{StaticResource SystemAccentColorBrush}">
+                        Background="{ThemeResource SystemAccentColorBrush}">
                     <TextBlock VerticalAlignment="Center"
                                Padding="20 4">Slim</TextBlock>
                 </Border>
@@ -242,7 +242,7 @@
                                       Unit="Units"
                                       IsInteractive="True"
                                       TickBrush="Transparent"
-                                      TrailBrush="{StaticResource SystemAccentColorBrush}"
+                                      TrailBrush="{ThemeResource SystemAccentColorBrush}"
                                       ScaleTickBrush="Transparent"
                                       ScaleBrush="{ThemeResource TenPercentContrastBrush}"
                                       NeedleWidth="4"
@@ -266,7 +266,7 @@
 
                 <Border CornerRadius="4 4 0 0"
                         Height="30"
-                        Background="{StaticResource SystemAccentColorBrush}">
+                        Background="{ThemeResource SystemAccentColorBrush}">
                     <TextBlock VerticalAlignment="Center"
                                Padding="20 4">Background Image</TextBlock>
                 </Border>
@@ -312,7 +312,7 @@
 
                 <Border CornerRadius="4 4 0 0"
                         Height="30"
-                        Background="{StaticResource SystemAccentColorBrush}">
+                        Background="{ThemeResource SystemAccentColorBrush}">
                     <TextBlock VerticalAlignment="Center"
                                Padding="20 4">270°</TextBlock>
                 </Border>

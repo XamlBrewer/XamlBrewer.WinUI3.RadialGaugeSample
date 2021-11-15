@@ -8,23 +8,40 @@
         <ResourceDictionary>
             <ResourceDictionary.ThemeDictionaries>
                 <ResourceDictionary x:Key="HighContrast">
+                    <!-- This makes the background disappear in High Contrast mode -->
                     <x:Double x:Key="BackgroundOpacity">0</x:Double>
                     <SolidColorBrush x:Key="TenPercentContrastBrush"
                                      Color="{ThemeResource SystemColorWindowTextColor}" />
                     <SolidColorBrush x:Key="SystemAccentColorBrush"
-                                     Color="{ThemeResource SystemColorWindowColor}" />
+                                     Color="{StaticResource SystemAccentColor}" />
+                    <!--<SolidColorBrush x:Key="SystemAccentColorBrush"
+                                     Color="{ThemeResource SystemColorWindowColor}" />-->
+                    <SolidColorBrush x:Key="AppNeedleBrush"
+                                     Color="{ThemeResource SystemAccentColor}" />
                 </ResourceDictionary>
                 <ResourceDictionary x:Key="Dark">
                     <x:Double x:Key="BackgroundOpacity">.075</x:Double>
                     <SolidColorBrush x:Key="TenPercentContrastBrush"
                                      Color="White"
                                      Opacity=".1" />
+                    <Color x:Key="SystemAccentColor">CadetBlue</Color>
+                    <SolidColorBrush x:Key="SystemAccentColorBrush"
+                                     Color="{StaticResource SystemAccentColor}"
+                                     Opacity=".5" />
+                    <SolidColorBrush x:Key="AppNeedleBrush"
+                                     Color="OrangeRed" />
                 </ResourceDictionary>
                 <ResourceDictionary x:Key="Light">
                     <x:Double x:Key="BackgroundOpacity">.15</x:Double>
                     <SolidColorBrush x:Key="TenPercentContrastBrush"
                                      Color="Black"
                                      Opacity=".1" />
+                    <Color x:Key="SystemAccentColor">CadetBlue</Color>
+                    <SolidColorBrush x:Key="SystemAccentColorBrush"
+                                     Color="{StaticResource SystemAccentColor}"
+                                     Opacity=".5" />
+                    <SolidColorBrush x:Key="AppNeedleBrush"
+                                     Color="OrangeRed" />
                 </ResourceDictionary>
             </ResourceDictionary.ThemeDictionaries>
             <ResourceDictionary.MergedDictionaries>
@@ -32,10 +49,7 @@
                 <ResourceDictionary Source="\Controls\RadialGauge\RadialGauge.xaml" />
                 <ResourceDictionary Source="\Controls\RadialGauge2\RadialGauge2.xaml" />
             </ResourceDictionary.MergedDictionaries>
-            <Color x:Key="SystemAccentColor">CadetBlue</Color>
-            <SolidColorBrush x:Key="SystemAccentColorBrush"
-                             Color="{StaticResource SystemAccentColor}"
-                             Opacity=".5" />
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>

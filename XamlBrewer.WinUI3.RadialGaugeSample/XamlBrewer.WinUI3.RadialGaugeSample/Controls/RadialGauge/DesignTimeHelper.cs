@@ -35,7 +35,8 @@ namespace Microsoft.Toolkit.Uwp.UI
         // Private initializer
         private static bool InitializeDesignerMode()
         {
-            return Windows.ApplicationModel.DesignMode.DesignModeEnabled;
+            return false;
+            // return Windows.ApplicationModel.DesignMode.DesignModeEnabled;
         }
 
         /// <summary>
@@ -56,7 +57,8 @@ namespace Microsoft.Toolkit.Uwp.UI
         /// <returns>True if called from code running inside a XAML designer that targets the Windows 10 Fall Creators Update, or later; otherwise false.</returns>
         private static bool InitializeDesignMode2()
         {
-            return Windows.ApplicationModel.DesignMode.DesignMode2Enabled;
+            return false;
+            // return Windows.ApplicationModel.DesignMode.DesignMode2Enabled;
         }
     }
 }

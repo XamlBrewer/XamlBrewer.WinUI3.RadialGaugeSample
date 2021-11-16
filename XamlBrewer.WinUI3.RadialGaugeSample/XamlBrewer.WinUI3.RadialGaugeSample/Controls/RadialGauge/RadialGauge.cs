@@ -5,7 +5,6 @@
 // See the LICENSE file in the project root for more information.
 
 using Microsoft.UI.Composition;
-using Microsoft.UI.Input;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Automation.Peers;
 using Microsoft.UI.Xaml.Controls;
@@ -17,7 +16,6 @@ using System;
 using System.Numerics;
 using Windows.Foundation;
 using Windows.System;
-using Windows.UI.Core;
 
 namespace Microsoft.Toolkit.Uwp.UI.Controls
 {
@@ -193,10 +191,10 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
         private void RadialGauge_KeyDown(object sender, KeyRoutedEventArgs e)
         {
             double step = SmallChange;
-            if (KeyboardInput.GetKeyStateForCurrentThread(VirtualKey.Control) == CoreVirtualKeyStates.Down)
-            {
-                step = LargeChange;
-            };
+            //if (KeyboardInput.GetKeyStateForCurrentThread(VirtualKey.Control) == CoreVirtualKeyStates.Down)
+            //{
+            //    step = LargeChange;
+            //};
 
             step = Math.Max(StepSize, step);
             if ((e.Key == VirtualKey.Left) || (e.Key == VirtualKey.Down))

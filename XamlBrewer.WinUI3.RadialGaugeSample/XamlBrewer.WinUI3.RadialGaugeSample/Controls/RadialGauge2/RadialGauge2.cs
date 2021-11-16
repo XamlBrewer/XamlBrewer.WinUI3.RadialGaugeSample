@@ -5,7 +5,6 @@
 // See the LICENSE file in the project root for more information.
 
 using Microsoft.UI.Composition;
-using Microsoft.UI.Input;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Automation.Peers;
 using Microsoft.UI.Xaml.Controls;
@@ -17,7 +16,6 @@ using System;
 using System.Numerics;
 using Windows.Foundation;
 using Windows.System;
-using Windows.UI.Core;
 
 namespace Microsoft.Toolkit.Uwp.UI.Controls
 {
@@ -181,33 +179,10 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
             Unloaded += RadialGauge_Unloaded;
         }
 
-        private void RadialGauge_KeyDown(object sender, KeyRoutedEventArgs e)
-        {
-            double step = SmallChange;
-            if (KeyboardInput.GetKeyStateForCurrentThread(VirtualKey.Control) == CoreVirtualKeyStates.Down)
-            {
-                step = LargeChange;
-            };
-
-            step = Math.Max(StepSize, step);
-            if ((e.Key == VirtualKey.Left) || (e.Key == VirtualKey.Down))
-            {
-                Value = Math.Max(Minimum, Value - step);
-                e.Handled = true;
-                return;
-            }
-
-            if ((e.Key == VirtualKey.Right) || (e.Key == VirtualKey.Up))
-            {
-                Value = Math.Min(Maximum, Value + step);
-                e.Handled = true;
-            }
-        }
-
         private void RadialGauge_Unloaded(object sender, RoutedEventArgs e)
         {
             // Unregister event handlers.
-            KeyDown -= RadialGauge_KeyDown;
+            KeyboardAccelerators.Clear();
             PointerReleased -= RadialGauge_PointerReleased;
             Unloaded -= RadialGauge_Unloaded;
         }
@@ -418,13 +393,91 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
         protected override void OnApplyTemplate()
         {
             // Register event handlers.
+            AddAccelerator(
+                VirtualKeyModifiers.Control,
+                VirtualKey.Left,
+                (ka, kaea) =>
+                {
+                    Value = Math.Max(Minimum, Value - LargeChange);
+                    kaea.Handled = true;
+                });
+            AddAccelerator(
+                VirtualKeyModifiers.None,
+                VirtualKey.Left,
+                (ka, kaea) =>
+                {
+                    Value = Math.Max(Minimum, Value - SmallChange);
+                    kaea.Handled = true;
+                });
+            AddAccelerator(
+                VirtualKeyModifiers.Control,
+                VirtualKey.Down,
+                (ka, kaea) =>
+                {
+                    Value = Math.Max(Minimum, Value - LargeChange);
+                    kaea.Handled = true;
+                });
+            AddAccelerator(
+                VirtualKeyModifiers.None,
+                VirtualKey.Down,
+                (ka, kaea) =>
+                {
+                    Value = Math.Max(Minimum, Value - SmallChange);
+                    kaea.Handled = true;
+                });
+            AddAccelerator(
+                VirtualKeyModifiers.Control,
+                VirtualKey.Right,
+                (ka, kaea) =>
+                {
+                    Value = Math.Min(Maximum, Value + LargeChange);
+                    kaea.Handled = true;
+                });
+            AddAccelerator(
+                VirtualKeyModifiers.None,
+                VirtualKey.Right,
+                (ka, kaea) =>
+                {
+                    Value = Math.Min(Maximum, Value + SmallChange);
+                    kaea.Handled = true;
+                });
+            AddAccelerator(
+                VirtualKeyModifiers.Control,
+                VirtualKey.Up,
+                (ka, kaea) =>
+                {
+                    Value = Math.Min(Maximum, Value + LargeChange);
+                    kaea.Handled = true;
+                });
+            AddAccelerator(
+                VirtualKeyModifiers.None,
+                VirtualKey.Up,
+                (ka, kaea) =>
+                {
+                    Value = Math.Min(Maximum, Value + SmallChange);
+                    kaea.Handled = true;
+                });
             PointerReleased += RadialGauge_PointerReleased;
-            KeyDown += RadialGauge_KeyDown;
 
             // Apply color scheme.
             OnScaleChanged(this);
 
             base.OnApplyTemplate();
+        }
+
+        private void AddAccelerator(
+          VirtualKeyModifiers keyModifiers,
+          VirtualKey key,
+          TypedEventHandler<KeyboardAccelerator, KeyboardAcceleratorInvokedEventArgs> handler)
+        {
+            var accelerator =
+              new KeyboardAccelerator()
+              {
+                  Modifiers = keyModifiers,
+                  Key = key
+              };
+            accelerator.Invoked += handler;
+            KeyboardAccelerators.Add(accelerator);
         }
 
         /// <inheritdoc/>
@@ -470,7 +523,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
                 // Needle
                 if (radialGauge._needle != null)
                 {
-                   radialGauge._needle.RotationAngleInDegrees = (float)radialGauge.ValueAngle;
+                    radialGauge._needle.RotationAngleInDegrees = (float)radialGauge.ValueAngle;
                 }
 
                 // Trail
@@ -645,7 +698,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
                 var stBrush = radialGauge._compositor.CreateColorBrush(radialGauge.ScaleTickBrush.Color);
                 var stOffset = new Vector3(100 - ((float)radialGauge.ScaleTickWidth / 2), (float)radialGauge.ScalePadding, 0);
                 var stCenterPoint = new Vector3((float)radialGauge.ScaleTickWidth / 2, 100 - (float)radialGauge.ScalePadding, 0);
-                
+
                 for (double i = radialGauge.Minimum; i <= radialGauge.Maximum; i += radialGauge.TickSpacing)
                 {
                     scaleTick = radialGauge._compositor.CreateSpriteVisual();

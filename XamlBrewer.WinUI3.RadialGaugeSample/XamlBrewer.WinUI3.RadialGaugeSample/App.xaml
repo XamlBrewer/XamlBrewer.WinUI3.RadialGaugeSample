@@ -30,7 +30,7 @@
                                      Color="OrangeRed" />
                 </ResourceDictionary>
                 <ResourceDictionary x:Key="Light">
-                    <x:Double x:Key="BackgroundOpacity">.15</x:Double>
+                    <x:Double x:Key="BackgroundOpacity">.1</x:Double>
                     <SolidColorBrush x:Key="TenPercentContrastBrush"
                                      Color="Black"
                                      Opacity=".1" />

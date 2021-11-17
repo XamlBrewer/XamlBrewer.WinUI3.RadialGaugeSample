@@ -393,7 +393,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
         protected override void OnApplyTemplate()
         {
             // Register event handlers.
-            AddAccelerator(
+            this.AddKeyboardAccelerator(
                 VirtualKeyModifiers.Control,
                 VirtualKey.Left,
                 (ka, kaea) =>
@@ -401,7 +401,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
                     Value = Math.Max(Minimum, Value - LargeChange);
                     kaea.Handled = true;
                 });
-            AddAccelerator(
+            this.AddKeyboardAccelerator(
                 VirtualKeyModifiers.None,
                 VirtualKey.Left,
                 (ka, kaea) =>
@@ -409,7 +409,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
                     Value = Math.Max(Minimum, Value - SmallChange);
                     kaea.Handled = true;
                 });
-            AddAccelerator(
+            this.AddKeyboardAccelerator(
                 VirtualKeyModifiers.Control,
                 VirtualKey.Down,
                 (ka, kaea) =>
@@ -417,7 +417,8 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
                     Value = Math.Max(Minimum, Value - LargeChange);
                     kaea.Handled = true;
                 });
-            AddAccelerator(
+
+            this.AddKeyboardAccelerator(
                 VirtualKeyModifiers.None,
                 VirtualKey.Down,
                 (ka, kaea) =>
@@ -425,7 +426,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
                     Value = Math.Max(Minimum, Value - SmallChange);
                     kaea.Handled = true;
                 });
-            AddAccelerator(
+            this.AddKeyboardAccelerator(
                 VirtualKeyModifiers.Control,
                 VirtualKey.Right,
                 (ka, kaea) =>
@@ -433,7 +434,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
                     Value = Math.Min(Maximum, Value + LargeChange);
                     kaea.Handled = true;
                 });
-            AddAccelerator(
+            this.AddKeyboardAccelerator(
                 VirtualKeyModifiers.None,
                 VirtualKey.Right,
                 (ka, kaea) =>
@@ -441,7 +442,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
                     Value = Math.Min(Maximum, Value + SmallChange);
                     kaea.Handled = true;
                 });
-            AddAccelerator(
+            this.AddKeyboardAccelerator(
                 VirtualKeyModifiers.Control,
                 VirtualKey.Up,
                 (ka, kaea) =>
@@ -449,7 +450,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
                     Value = Math.Min(Maximum, Value + LargeChange);
                     kaea.Handled = true;
                 });
-            AddAccelerator(
+            this.AddKeyboardAccelerator(
                 VirtualKeyModifiers.None,
                 VirtualKey.Up,
                 (ka, kaea) =>
@@ -463,21 +464,6 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
             OnScaleChanged(this);
 
             base.OnApplyTemplate();
-        }
-
-        private void AddAccelerator(
-          VirtualKeyModifiers keyModifiers,
-          VirtualKey key,
-          TypedEventHandler<KeyboardAccelerator, KeyboardAcceleratorInvokedEventArgs> handler)
-        {
-            var accelerator =
-              new KeyboardAccelerator()
-              {
-                  Modifiers = keyModifiers,
-                  Key = key
-              };
-            accelerator.Invoked += handler;
-            KeyboardAccelerators.Add(accelerator);
         }
 
         /// <inheritdoc/>

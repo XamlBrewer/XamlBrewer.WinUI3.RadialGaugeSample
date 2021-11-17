@@ -8,13 +8,13 @@
           Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
           VerticalAlignment="Stretch"
           HorizontalAlignment="Stretch">
-        <Grid.Resources>
+        <!--<Grid.Resources>
             <AcrylicBrush x:Key="NavigationViewExpandedPaneBackground"
                           TintColor="{StaticResource SystemChromeMediumLowColor}"
                           TintOpacity="0"
                           TintLuminosityOpacity="0"
                           FallbackColor="{StaticResource SystemChromeMediumLowColor}" />
-        </Grid.Resources>
+        </Grid.Resources>-->
 
         <!-- Background -->
         <Image Stretch="UniformToFill"
@@ -27,7 +27,7 @@
         <NavigationView x:Name="NavigationView"
                         Loaded="NavigationView_Loaded"
                         SelectionChanged="NavigationView_SelectionChanged"
-                        Header="WinUI 3 DataGrid Sample"
+                        Header="WinUI 3 Radial Gauge Sample"
                         IsBackButtonVisible="Collapsed"
                         Background="Transparent"
                         IsSettingsVisible="False"
@@ -64,8 +64,8 @@
                 </NavigationViewItem>
             </NavigationView.FooterMenuItems>
             <Frame x:Name="ContentFrame"
-                   Padding="16 0 16 16">
-                <Frame.ContentTransitions>
+                   Padding="20">
+                <!--<Frame.ContentTransitions>
                     <TransitionCollection>
                         <NavigationThemeTransition>
                             <NavigationThemeTransition.DefaultNavigationTransitionInfo>
@@ -73,7 +73,7 @@
                             </NavigationThemeTransition.DefaultNavigationTransitionInfo>
                         </NavigationThemeTransition>
                     </TransitionCollection>
-                </Frame.ContentTransitions>
+                </Frame.ContentTransitions>-->
             </Frame>
         </NavigationView>
 

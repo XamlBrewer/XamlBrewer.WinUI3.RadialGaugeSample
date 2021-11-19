@@ -192,8 +192,8 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
         /// </summary>
         public double StepSize
         {
-            get { return (double)GetValue(StepSizeProperty); }
-            set { SetValue(StepSizeProperty, value); }
+            get => (double)GetValue(StepSizeProperty);
+            set => SetValue(StepSizeProperty, value);
         }
 
         /// <summary>
@@ -201,8 +201,8 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
         /// </summary>
         public bool IsInteractive
         {
-            get { return (bool)GetValue(IsInteractiveProperty); }
-            set { SetValue(IsInteractiveProperty, value); }
+            get => (bool)GetValue(IsInteractiveProperty);
+            set => SetValue(IsInteractiveProperty, value);
         }
 
         /// <summary>
@@ -210,8 +210,8 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
         /// </summary>
         public double ScaleWidth
         {
-            get { return (double)GetValue(ScaleWidthProperty); }
-            set { SetValue(ScaleWidthProperty, value); }
+            get => (double)GetValue(ScaleWidthProperty);
+            set => SetValue(ScaleWidthProperty, value);
         }
 
         /// <summary>
@@ -219,8 +219,8 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
         /// </summary>
         public string Unit
         {
-            get { return (string)GetValue(UnitProperty); }
-            set { SetValue(UnitProperty, value); }
+            get => (string)GetValue(UnitProperty);
+            set => SetValue(UnitProperty, value);
         }
 
         /// <summary>
@@ -228,8 +228,8 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
         /// </summary>
         public SolidColorBrush NeedleBrush
         {
-            get { return (SolidColorBrush)GetValue(NeedleBrushProperty); }
-            set { SetValue(NeedleBrushProperty, value); }
+            get => (SolidColorBrush)GetValue(NeedleBrushProperty);
+            set => SetValue(NeedleBrushProperty, value);
         }
 
         /// <summary>
@@ -237,8 +237,8 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
         /// </summary>
         public Brush TrailBrush
         {
-            get { return (Brush)GetValue(TrailBrushProperty); }
-            set { SetValue(TrailBrushProperty, value); }
+            get => (Brush)GetValue(TrailBrushProperty);
+            set => SetValue(TrailBrushProperty, value);
         }
 
         /// <summary>
@@ -246,8 +246,8 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
         /// </summary>
         public Brush ScaleBrush
         {
-            get { return (Brush)GetValue(ScaleBrushProperty); }
-            set { SetValue(ScaleBrushProperty, value); }
+            get => (Brush)GetValue(ScaleBrushProperty);
+            set => SetValue(ScaleBrushProperty, value);
         }
 
         /// <summary>
@@ -255,8 +255,8 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
         /// </summary>
         public SolidColorBrush ScaleTickBrush
         {
-            get { return (SolidColorBrush)GetValue(ScaleTickBrushProperty); }
-            set { SetValue(ScaleTickBrushProperty, value); }
+            get => (SolidColorBrush)GetValue(ScaleTickBrushProperty);
+            set => SetValue(ScaleTickBrushProperty, value);
         }
 
         /// <summary>
@@ -264,8 +264,8 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
         /// </summary>
         public SolidColorBrush TickBrush
         {
-            get { return (SolidColorBrush)GetValue(TickBrushProperty); }
-            set { SetValue(TickBrushProperty, value); }
+            get => (SolidColorBrush)GetValue(TickBrushProperty);
+            set => SetValue(TickBrushProperty, value);
         }
 
         /// <summary>
@@ -273,8 +273,8 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
         /// </summary>
         public string ValueStringFormat
         {
-            get { return (string)GetValue(ValueStringFormatProperty); }
-            set { SetValue(ValueStringFormatProperty, value); }
+            get => (string)GetValue(ValueStringFormatProperty);
+            set => SetValue(ValueStringFormatProperty, value);
         }
 
         /// <summary>
@@ -282,8 +282,8 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
         /// </summary>
         public int TickSpacing
         {
-            get { return (int)GetValue(TickSpacingProperty); }
-            set { SetValue(TickSpacingProperty, value); }
+            get => (int)GetValue(TickSpacingProperty);
+            set => SetValue(TickSpacingProperty, value);
         }
 
         /// <summary>
@@ -291,8 +291,8 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
         /// </summary>
         public double NeedleLength
         {
-            get { return (double)GetValue(NeedleLengthProperty); }
-            set { SetValue(NeedleLengthProperty, value); }
+            get => (double)GetValue(NeedleLengthProperty);
+            set => SetValue(NeedleLengthProperty, value);
         }
 
         /// <summary>
@@ -300,8 +300,8 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
         /// </summary>
         public double NeedleWidth
         {
-            get { return (double)GetValue(NeedleWidthProperty); }
-            set { SetValue(NeedleWidthProperty, value); }
+            get => (double)GetValue(NeedleWidthProperty);
+            set => SetValue(NeedleWidthProperty, value);
         }
 
         /// <summary>
@@ -309,8 +309,8 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
         /// </summary>
         public double ScalePadding
         {
-            get { return (double)GetValue(ScalePaddingProperty); }
-            set { SetValue(ScalePaddingProperty, value); }
+            get => (double)GetValue(ScalePaddingProperty);
+            set => SetValue(ScalePaddingProperty, value);
         }
 
         /// <summary>
@@ -318,8 +318,8 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
         /// </summary>
         public double ScaleTickWidth
         {
-            get { return (double)GetValue(ScaleTickWidthProperty); }
-            set { SetValue(ScaleTickWidthProperty, value); }
+            get => (double)GetValue(ScaleTickWidthProperty);
+            set => SetValue(ScaleTickWidthProperty, value);
         }
 
         /// <summary>
@@ -327,8 +327,8 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
         /// </summary>
         public double TickLength
         {
-            get { return (double)GetValue(TickLengthProperty); }
-            set { SetValue(TickLengthProperty, value); }
+            get => (double)GetValue(TickLengthProperty);
+            set => SetValue(TickLengthProperty, value);
         }
 
         /// <summary>
@@ -336,8 +336,8 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
         /// </summary>
         public double TickWidth
         {
-            get { return (double)GetValue(TickWidthProperty); }
-            set { SetValue(TickWidthProperty, value); }
+            get => (double)GetValue(TickWidthProperty);
+            set => SetValue(TickWidthProperty, value);
         }
 
         /// <summary>
@@ -346,8 +346,8 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
         /// <remarks>Changing MinAngle may require retemplating the control.</remarks>
         public int MinAngle
         {
-            get { return (int)GetValue(MinAngleProperty); }
-            set { SetValue(MinAngleProperty, value); }
+            get => (int)GetValue(MinAngleProperty);
+            set => SetValue(MinAngleProperty, value);
         }
 
         /// <summary>
@@ -356,8 +356,8 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
         /// <remarks>Changing MaxAngle may require retemplating the control.</remarks>
         public int MaxAngle
         {
-            get { return (int)GetValue(MaxAngleProperty); }
-            set { SetValue(MaxAngleProperty, value); }
+            get => (int)GetValue(MaxAngleProperty);
+            set => SetValue(MaxAngleProperty, value);
         }
 
         /// <summary>
@@ -365,8 +365,8 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
         /// </summary>
         protected double ValueAngle
         {
-            get { return (double)GetValue(ValueAngleProperty); }
-            set { SetValue(ValueAngleProperty, value); }
+            get => (double)GetValue(ValueAngleProperty);
+            set => SetValue(ValueAngleProperty, value);
         }
 
         /// <summary>

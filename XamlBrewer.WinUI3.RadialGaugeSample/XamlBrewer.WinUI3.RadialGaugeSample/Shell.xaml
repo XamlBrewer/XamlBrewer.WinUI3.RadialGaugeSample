@@ -33,7 +33,7 @@
                         IsSettingsVisible="False"
                         Margin="0">
             <NavigationView.PaneCustomContent>
-                <HyperlinkButton NavigateUri="https://xamlbrewer.wordpress.com/2021/09/28/using-the-windows-community-toolkit-datagrid-with-winui-3-and-entity-framework-core/"
+                <HyperlinkButton NavigateUri="https://xamlbrewer.wordpress.com/2021/12/08/upgrading-radial-gauge-from-uwp-to-winui-3/"
                                  Margin="8 0">Blog post</HyperlinkButton>
             </NavigationView.PaneCustomContent>
             <NavigationView.MenuItems>
